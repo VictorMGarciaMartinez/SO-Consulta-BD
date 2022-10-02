@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 		// construimos la consulta SQL
 		strcpy (consulta,"SELECT jugador.username FROM (jugador, partida, historial) WHERE partida.mapa = "); 
 		strcat (consulta, mapa);
-		strcat (consulta," AND historial.id_p = partida.id AND historial.id_j1 = jugador.id;");
+		strcat (consulta," AND historial.id_p = partida.id AND historial.id_j = jugador.id AND historial.posicion = 1;");
 		// hacemos la consulta 
 		err=mysql_query (conn, consulta); 
 		if (err!=0) {
